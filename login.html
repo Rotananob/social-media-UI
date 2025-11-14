@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - Social Khmer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <i class="fas fa-infinity"></i>
+                    <span>Social Khmer</span>
+                </div>
+                <h2>សូមស្វាគមន៍</h2>
+                <p class="muted">ចូលឬចុះឈ្មោះដើម្បីបន្ត</p>
+            </div>
+
+            <div class="auth-body">
+                <div class="form-group">
+                    <label for="email">អ៊ីម៉ែល</label>
+                    <input type="email" id="auth-email-input" class="form-input" placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">ពាក្យសម្ងាត់</label>
+                    <input type="password" id="auth-password-input" class="form-input" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label for="displayName">ឈ្មោះបង្ហាញ (សម្រាប់ការចុះឈ្មោះ)</label>
+                    <input type="text" id="auth-username-input" class="form-input" placeholder="ឧ. Bro Bro">
+                </div>
+
+                <div class="auth-actions">
+                    <button class="btn-primary" id="auth-login-btn">ចូល</button>
+                    <button class="btn-secondary" id="auth-register-btn">ចុះឈ្មោះ</button>
+                </div>
+
+                <div class="auth-links">
+                    <button class="btn-link" id="auth-forgot-btn">ភ្លេចពាក្យសម្ងាត់?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification container -->
+    <div id="notification-container"></div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+
+    <!-- Login Script -->
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialHub - Connect, Share & Inspire</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER/NAVIGATION BAR -->
+        <header class="header">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <i class="fas fa-infinity"></i>
+                    <span>Social Khmer</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="ស្វែងរក bài viết, មនុស្ស, និងច្រើនទៀត...">
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Notifications -->
+                    <div class="header-action-item">
+                        <button class="icon-btn" id="notifications-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+
+                    <!-- Messages -->
+                    <div class="header-action-item">
+                        <button class="icon-btn" id="messages-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span class="notification-badge">5</span>
+                        </button>
+                    </div>
+
+                    <!-- Create Post Button -->
+                    <div class="header-action-item">
+                        <button class="btn-primary" id="create-post-btn">
+                            <i class="fas fa-pen"></i>
+                            <span>Post</span>
+                        </button>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="header-action-item user-profile">
+                        <button class="user-avatar" id="user-menu-btn">
+                            <img src="https://i.pravatar.cc/40?img=1" alt="Your Profile">
+                        </button>
+                        <span id="header-username" class="header-username" aria-live="polite"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-layout">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar sidebar-left">
+                <nav class="sidebar-nav">
+                    <!-- Navigation Items -->
+                    <div class="nav-item active" data-nav="feed">
+                        <i class="fas fa-home"></i>
+                        <span>Feed</span>
+                    </div>
+                    <div class="nav-item" data-nav="friends">
+                        <i class="fas fa-users"></i>
+                        <span>Friends</span>
+                    </div>
+                    <div class="nav-item" data-nav="groups">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Groups</span>
+                    </div>
+                    <div class="nav-item" data-nav="messages">
+                        <i class="fas fa-comments"></i>
+                        <span>Messages</span>
+                    </div>
+                    <div class="nav-item" data-nav="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="theme-toggle-container">
+                        <label class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle-input">
+                            <div class="toggle-track">
+                                <div class="toggle-thumb">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                            </div>
+                        </label>
+                            <span class="theme-label">ម៉ូដងងឹត/ចំណាំ</span>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- CENTER CONTENT -->
+            <main class="content-main">
+                <!-- CREATE POST CARD -->
+                <div class="create-post-card">
+                    <div class="create-post-header">
+                        <img src="https://i.pravatar.cc/48" alt="Your Profile" class="profile-pic" id="create-post-avatar">
+                        <input type="text" placeholder="តើអ្នកគិតអ្វី?»" class="create-post-input" id="create-post-input">
+                    </div>
+                    <div class="create-post-actions">
+                        <button class="create-action-btn">
+                            <i class="fas fa-image"></i>
+                            <span>រូបថត</span>
+                        </button>
+                        <button class="create-action-btn">
+                            <i class="fas fa-video"></i>
+                            <span>វីដេអូ</span>
+                        </button>
+                        <button class="create-action-btn">
+                            <i class="fas fa-smile"></i>
+                            <span>អារម្មណ៍</span>
+                        </button>
+                        <button class="create-action-btn post-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>ផ្សព្វផ្សាយ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- POSTS FEED -->
+                <div class="posts-feed" id="posts-feed">
+                    <!-- Firebase posts will be loaded here -->
+                </div>
+            </main>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside class="sidebar sidebar-right">
+                <!-- Trends/Suggestions -->
+                <div class="widget trends-widget">
+                    <h3 class="widget-title">ពេញនិយមឥឡូវនេះ</h3>
+                    
+                    <div class="trend-item">
+                        <div class="trend-info">
+                            <h4>#រចនាប្រព័ន្ធវេប</h4>
+                            <span class="trend-count">45.2K posts</span>
+                        </div>
+                        <i class="fas fa-arrow-up trend-indicator"></i>
+                    </div>
+
+                    <div class="trend-item">
+                        <div class="trend-info">
+                            <h4>#UI/UX</h4>
+                            <span class="trend-count">32.8K posts</span>
+                        </div>
+                        <i class="fas fa-arrow-up trend-indicator"></i>
+                    </div>
+
+                    <div class="trend-item">
+                        <div class="trend-info">
+                            <h4>#JavaScript</h4>
+                            <span class="trend-count">28.5K posts</span>
+                        </div>
+                        <i class="fas fa-arrow-up trend-indicator"></i>
+                    </div>
+
+                    <div class="trend-item">
+                        <div class="trend-info">
+                            <h4>#WebDevelopment</h4>
+                            <span class="trend-count">52.1K posts</span>
+                        </div>
+                        <i class="fas fa-arrow-up trend-indicator"></i>
+                    </div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="widget suggestions-widget">
+                    <h3 class="widget-title">ចំណាប់អារម្មណ៍សម្រាប់អ្នក</h3>
+
+                    <div class="suggestion-item">
+                        <img src="https://i.pravatar.cc/40?img=6" alt="User">
+                        <div class="suggestion-info">
+                            <h4>Jessica Lee</h4>
+                            <span>1.2M អ្នកតាម</span>
+                        </div>
+                        <button class="btn-follow">តាម</button>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <img src="https://i.pravatar.cc/40?img=7" alt="User">
+                        <div class="suggestion-info">
+                            <h4>Alex Rivera</h4>
+                            <span>890K អ្នកតាម</span>
+                        </div>
+                        <button class="btn-follow">តាម</button>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <img src="https://i.pravatar.cc/40?img=8" alt="User">
+                        <div class="suggestion-info">
+                            <h4>Taylor Swift</h4>
+                            <span>2.3M អ្នកតាម</span>
+                        </div>
+                        <button class="btn-follow">តាម</button>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <img src="https://i.pravatar.cc/40?img=9" alt="User">
+                        <div class="suggestion-info">
+                            <h4>Morgan Studio</h4>
+                            <span>567K អ្នកតាម</span>
+                        </div>
+                        <button class="btn-follow">តាម</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+        <!-- Firebase App (required) -->
+        <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+        <!-- Firebase Realtime Database -->
+        <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+
+        <!-- Initialize Firebase config will be injected in script.js; below is your config for reference -->
+        <!--
+        const firebaseConfig = {
+            apiKey: "AIzaSyByB1O95PodUZ9_S4WSIQTGu2kwM5-HaVQ",
+            authDomain: "social-media-v11.firebaseapp.com",
+            databaseURL: "https://social-media-v11-default-rtdb.firebaseio.com",
+            projectId: "social-media-v11",
+            storageBucket: "social-media-v11.firebasestorage.app",
+            messagingSenderId: "160460298649",
+            appId: "1:160460298649:web:2862fc29a1b05777681b08"
+        };
+        -->
+        <script src="script.js"></script>
+</body>
+</html>
